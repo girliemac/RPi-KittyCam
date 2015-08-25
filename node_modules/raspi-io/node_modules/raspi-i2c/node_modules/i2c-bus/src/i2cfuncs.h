@@ -1,6 +1,0 @@
-#ifndef I2C_BUS_I2CFUNCS_H_
-#define I2C_BUS_I2CFUNCS_H_
-NAN_METHOD(I2cFuncsAsync);
-NAN_METHOD(I2cFuncsSync);
-#endif // I2C_BUS_I2CFUNCS_H_
-
