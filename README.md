@@ -189,4 +189,4 @@ Analized photos are deleted from the filesystem to clear up Pi.
 ## Known Issue
 
 - No photos during mealtime. When a cat is eating food (head-down position), the facial detection doesn't recognize the cat at all.
-- Raspistll behaves wrongly with `t = 0` (supposed to takes a photo immediately, but it keeps taking photos every sencond and crashes my Pi!) so I have set `t = 1`, which causes delay. Cats are too fast to wait for a second.
+- Raspistll continuously takes a bunch of photos when I set `t = 0` (and crashes Pi while so many child process is running) so I have set `t = 1`, which causes delay. It seems to take only integer. Cats are too fast to wait for a second. 
