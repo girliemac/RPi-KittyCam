@@ -1,0 +1,103 @@
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 1.3em;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 10px;
+}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html {
+	height: 100%;
+}
+body {
+	padding: 1em 2em;
+	margin: 0;
+	font-family: "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif; 
+	font-weight: 300;
+	color: #fff;
+	background: #1c2831;
+	background-size: 800px;
+}
+a {
+	color: #ce1126;
+}
+header {
+	margin-top: 10px;
+	font-size: 20px;
+	line-height: 50px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	color: #bbe4fd;
+}
+header img {
+	width: 30px;
+	height: 30px;
+	margin-top: -5px;
+	margin-right: 10px;
+	margin-left: 20px;
+	position: relative;
+	top: 5px;
+}
+h1, h2, h3 {
+	margin: 0;
+	color: #555;
+	text-rendering: optimizeLegibility;
+}
+h1 {
+	font-size: 3.25em;
+	margin: 0;
+	font-weight: normal;
+}
+h2 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+p, footer {
+	margin: 1em 0 .5em;
+}
+footer {
+	clear: both;
+	text-align: right;
+	margin-top: 4em;
+}
+footer .credit {
+	font-size: .8em;
+}
+
+
+/* UI component styles */
+
+.photo {
+	width: 320px;
+  margin: 10px;
+  display: inline-block;
+}
+.photo img {
+	width: 320px;
+	height: 240px;
+}
+.photo figcaption {
+	text-align: center;
+}
+
+
+
+
