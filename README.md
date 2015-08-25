@@ -90,7 +90,13 @@ $ sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev bui
 
 See more info on how to install Cairo for Node [Canvas](https://github.com/Automattic/node-canvas), see this [*Installation Ubuntu and other Debian based systems*](https://github.com/Automattic/node-canvas/wiki/Installation---Ubuntu-and-other-Debian-based-systems)
 
-### 2. Install KittyDar
+If you download and use the whole `node_modules` contents off this repo, skip the step 2, and proceed to step 3.
+Otherwise, go to the next step to fresh-install the next several modules.
+
+
+### 2. Install Dependency Modules
+
+#### Install KittyDar
 
 Once your environment is set up, in this RPi-KittyCam dir, install node dependency modules.
 
@@ -104,13 +110,13 @@ Get the zip from [my forked repo](https://github.com/girliemac/kittydar).
 
 *Note: I am sending a pull request (https://github.com/harthur/kittydar/pull/27)*
 
-### 3. Install Johnny-Five
+#### Install Johnny-Five
 
 ```
 $ npm install johnny-five
 ```
 
-### 4. Install PubNub
+#### Install PubNub
 
 For realtime live-updating the web interface, use PubNub.
 
@@ -120,7 +126,7 @@ $ npm install pubnub
 
 You need to [sign up and get you own publish and subscribe keys!](http://pubnub.com)
 
-### 5. Install Cloudinary
+#### Install Cloudinary
 
 For storing photos, use Cloudinary.
 
@@ -130,7 +136,7 @@ $ npm install cloudinary
 
 You need to [sign up and get you own API keys!](http://cloudinary.com)
 
-### 6. Set up your config.js with Credentials
+### 3. Set up your config.js with Credentials
 
 Create a `config.js` in the root dir of the app.
 The file should include your API keys:
@@ -152,7 +158,7 @@ module.exports = {
 };
 ```
 
-### 7. Run the Code
+### 4. Run the Code
 
 You must run with sudo:
 
@@ -166,7 +172,7 @@ When there are any cat, it sends the photo to Cloudinary.
 
 Analized photos are deleted from the filesystem to clear up Pi.
 
-### 8. View the Live Photo Update on Web
+### 5. View the Live Photo Update on Web
 
 - Get the web interface source code from `gh-pages` branch.
 - Run the `index.html` on browser
