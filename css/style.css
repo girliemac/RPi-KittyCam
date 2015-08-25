@@ -30,45 +30,35 @@ body {
 	padding: 1em 2em;
 	margin: 0;
 	font-family: "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif; 
-	font-weight: 300;
+	font-weight: 200;
 	color: #fff;
 	background: #1c2831;
-	background-size: 800px;
+  font-weight: 100;
 }
 a {
 	color: #ce1126;
 }
 header {
 	margin-top: 10px;
-	font-size: 20px;
-	line-height: 50px;
-	font-weight: 100;
-	letter-spacing: 2px;
-	color: #bbe4fd;
 }
 header img {
-	width: 30px;
-	height: 30px;
-	margin-top: -5px;
-	margin-right: 10px;
+  width: 52px;
+	height: 40px;
+	margin-right: 16px;
 	margin-left: 20px;
-	position: relative;
-	top: 5px;
 }
 h1, h2, h3 {
 	margin: 0;
-	color: #555;
 	text-rendering: optimizeLegibility;
 }
 h1 {
-	font-size: 3.25em;
-	margin: 0;
-	font-weight: normal;
-}
-h2 {
-	font-size: 1.2em;
-	text-transform: uppercase;
-	font-weight: normal;
+  display: inline;
+	font-size: 48px;
+  line-height: 58px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: #f6c3d8;
+  text-shadow: 1px 2px 0px #000;
 }
 p, footer {
 	margin: 1em 0 .5em;
