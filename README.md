@@ -102,6 +102,10 @@ Otherwise, go to the next step to fresh-install the next several modules.
 
 #### Install KittyDar
 
+![Jamie detected](http://res.cloudinary.com/girliemac/image/upload/v1440530252/jrfqcdul46c84qlqlks9.png "Jamie detected by KittyDar")
+*This is an actual photo taken by my Raspberry Pi, while Jamie was eating, and detected by KittyDar cat facial detection!*
+
+
 Once your environment is set up, in this RPi-KittyCam dir, install node dependency modules.
 
 Ideally install from `npm install kittydar —save`
@@ -182,4 +186,7 @@ Analized photos are deleted from the filesystem to clear up Pi.
 - Run the `index.html` on browser
 
 
+## Known Issue
 
+- No photos during mealtime. When a cat is eating food (head-down position), the facial detection doesn't recognize the cat at all.
+- Raspistll behaves wrongly with `t = 0` (supposed to takes a photo immediately, but it keeps taking photos every sencond and crashes my Pi!) so I have set `t = 1`, which causes delay. Cats are too fast to wait for a second.
