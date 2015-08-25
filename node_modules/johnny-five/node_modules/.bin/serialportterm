@@ -1,0 +1,1 @@
+../serialport/bin/serialportTerminal.js

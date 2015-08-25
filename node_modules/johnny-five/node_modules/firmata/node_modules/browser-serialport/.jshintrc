@@ -1,0 +1,11 @@
+{
+    "node": true,
+    "browser": true,
+    "debug": true,
+    "mocha": true,
+    "undef": true,
+    "unused": true,
+    "predef": [
+        "chrome"
+    ]
+}

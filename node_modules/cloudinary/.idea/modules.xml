@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/cloudinary_npm.iml" filepath="$PROJECT_DIR$/.idea/cloudinary_npm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samples/photo_album/photo_album.iml" filepath="$PROJECT_DIR$/samples/photo_album/photo_album.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+#ifndef I2C_BUS_RECEIVEBYTE_H_
+#define I2C_BUS_RECEIVEBYTE_H_
+NAN_METHOD(ReceiveByteAsync);
+NAN_METHOD(ReceiveByteSync);
+#endif // I2C_BUS_RECEIVEBYTE_H_
+

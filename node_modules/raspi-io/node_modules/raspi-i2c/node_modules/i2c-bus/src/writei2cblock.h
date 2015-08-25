@@ -1,0 +1,6 @@
+#ifndef I2C_BUS_WRITEI2CBLOCK_H_
+#define I2C_BUS_WRITEI2CBLOCK_H_
+NAN_METHOD(WriteI2cBlockAsync);
+NAN_METHOD(WriteI2cBlockSync);
+#endif // I2C_BUS_WRITEI2CBLOCK_H_
+

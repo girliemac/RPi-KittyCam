@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="../node_modules/es6-shim/es6-shim.js"></script>
+  </head>
+  <body>
+
+
+
+<!--     <div id="nxt" style="height: 300px">
+      <span>Red 5</span>
+      <span>Yellow 4</span>
+      <span>Green 3</span>
+      <span>Blue 2</span>
+      <span>White 6</span>
+      <span>Black 1</span>
+    </div>
+<br>
+ -->
+    <div id="ev3" style="height: 300px">
+      <span>Red 5</span>
+      <span>Yellow 4</span>
+      <span>Lime 3</span>
+      <span>Blue 2</span>
+      <!-- <span>Saddlebrown 7</span> -->
+      <span>White 6</span>
+      <span>Black 1</span>
+    </div>
+
+    <script>
+      Array.from(document.querySelectorAll("div")).forEach(function(div) {
+        Array.from(div.children).forEach(function(block) {
+          block.style.width = ((100 / div.children.length) - 1) + "%";
+          block.style.height = "300px";
+          block.style.display = "inline-block";
+          block.style.backgroundColor = block.innerHTML.toLowerCase().split(" ")[0];
+          block.style.float = "left";
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+<!-- <!doctype html>
+<html>
+  <head>
+    <script src="../node_modules/es6-shim/es6-shim.js"></script>
+  </head>
+  <body>
+
+
+
+    <fieldset>
+      <legend>NXT</legend>
+      <button>Red 5</button>
+      <button>Yellow 4</button>
+      <button>Green 3</button>
+      <button>Blue 2</button>
+      <button>White 6</button>
+      <button>Black 1</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>EV3</legend>
+      <button>Red 5</button>
+      <button>Yellow 4</button>
+      <button>Green 3</button>
+      <button>Blue 2</button>
+      <button>Brown 7</button>
+      <button>White 6</button>
+      <button>Black 1</button>
+    </fieldset>
+
+    <script>
+      Array.from(document.querySelectorAll("button")).forEach(function(button) {
+        button.onclick = function() {
+          var color = this.innerHTML.toLowerCase().split(" ")[0];
+
+          document.body.style.backgroundColor = color;
+
+        };
+      });
+    </script>
+  </body>
+</html>
+ -->
