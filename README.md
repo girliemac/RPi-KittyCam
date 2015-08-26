@@ -6,7 +6,7 @@
 
 Raspberry Pi app using a camera and PIR motion sensor, written in Node.js using Johnny-Five and KittyDar for  with cat facial detection.
 
-**I will write up the step-by-step tutorial (hopefully) soon!** But unti then, here is the instruction how to run this code locally with your own Raspberry Pi.
+**I will write up the step-by-step tutorial (hopefully) soon!** But until then, here is the instruction how to run this code locally with your own Raspberry Pi.
 
 
 ## Building the Circuit
@@ -94,7 +94,7 @@ $ sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev bui
 
 See more info on how to install Cairo for Node [Canvas](https://github.com/Automattic/node-canvas), see this [*Installation Ubuntu and other Debian based systems*](https://github.com/Automattic/node-canvas/wiki/Installation---Ubuntu-and-other-Debian-based-systems)
 
-If you download and use the whole `node_modules` contents off this repo, skip the step 2, and proceed to step 3.
+If you download and use the whole `node_modules` contents of this repo, skip the step 2, and proceed to step 3.
 Otherwise, go to the next step to fresh-install the next several modules.
 
 
@@ -189,7 +189,7 @@ Analized photos are deleted from the filesystem to clear up Pi.
 ## Known Issue
 
 ### Raspistill (Camera Software)
-- Raspistll continuously takes a bunch of photos when I set `t = 0` (and crashes Pi while so many child process is running) so I have set `t = 1`, which causes delay. It seems to take only integer. Cats are too fast to wait for a second. 
+- Raspistill continuously takes a bunch of photos when I set `t = 0` (and crashes Pi while so many child process is running) so I have set `t = 1`, which causes delay. It seems to take only integer. Cats are too fast to wait for a second. 
 - The camera can't capture recognizable pics after the sun is set. My room light is too dark.
 
 ### KittyDar (Cat Facial Recognition)
