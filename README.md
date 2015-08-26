@@ -188,5 +188,16 @@ Analized photos are deleted from the filesystem to clear up Pi.
 
 ## Known Issue
 
-- No photos during mealtime. When a cat is eating food (head-down position), the facial detection doesn't recognize the cat at all.
+### Raspistill (Camera Software)
 - Raspistll continuously takes a bunch of photos when I set `t = 0` (and crashes Pi while so many child process is running) so I have set `t = 1`, which causes delay. It seems to take only integer. Cats are too fast to wait for a second. 
+- The camera can't capture recognizable pics after the sun is set. My room light is too dark.
+
+### KittyDar (Cat Facial Recognition)
+
+- During mealtime. When a cat is eating food (head-down position), the facial detection doesn't recognize the cat at all.
+- When my cat moves, eats from the side of the dish, or put his butt on the camera, it fails to tell me my cat was eating.
+
+#### The cat photos failed to be recognized
+
+![Jamie undetected](photo/image_14.jpg "Jamie undetected")
+![Jamie undetected](photo/image_24.jpg "Jamie undetected")
