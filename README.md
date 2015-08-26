@@ -203,3 +203,4 @@ Analized photos are deleted from the filesystem to clear up Pi.
 ![Jamie undetected](photo/image_24.jpg "Jamie undetected")
 ![Jamie undetected](photo/image_150.jpg "Jamie undetected")
 ![Jamie undetected](photo/image_166.jpg "Jamie undetected")
+![Upside-down Jamie undetected](photo/image_311.jpg "Jamie undetected")
