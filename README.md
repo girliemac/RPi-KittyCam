@@ -22,7 +22,11 @@ If you are a Raspberry Pi newbie, I recommend to buy your first Pi from [CanaKit
 
 ### Wiring
 
-- 1 red wire: PIR-VCC to Pi's 3V
+#### Camera to Pi
+- Connect the camera module to the CSI port
+
+#### PIR Sensor to Pi
+- 1 red wire: PIR-VCC to Pi's 5V
 - 1 black wire: PIR-GND to Pi's ground
 - 1 whatever color wire: PIR-OUT to Pi's Pin 7 (GPIO 4)
 
