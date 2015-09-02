@@ -182,7 +182,7 @@ The camera will take a photo when a motion is detected by the PIR sensor.
 Then the child_process runs to detect if there is any cats in the photo.
 When there are any cat, it sends the photo to Cloudinary.
 
-Analized photos are deleted from the filesystem to clear up Pi.
+Analyzed photos are deleted from the filesystem to clear up Pi.
 
 ### 5. View the Live Photo Update on Web
 
