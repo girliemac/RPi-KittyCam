@@ -88,7 +88,7 @@ function deletePhoto(imgPath) {
 // to make a separated web/mobile interface can subscribe the data to stream the photos in realtime.
 
 var pubnub = require('pubnub');
-var channel = 'kittycam';
+var channel = 'kittyCam';
 
 pubnub = pubnub.init({
   subscribe_key: config.pubnub.subscribe_key,
