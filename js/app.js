@@ -1,5 +1,5 @@
 (function() {
-  var channel = 'kittycam';
+  var channel = 'kittyCam';
 
   var pubnub = PUBNUB.init({
       subscribe_key: 'sub-c-f762fb78-2724-11e4-a4df-02ee2ddab7fe',
@@ -26,6 +26,7 @@
   function getHistory() {
     pubnub.history({
       channel  : channel,
+      count: 30,
       callback : function(messages) {
         messages[0].forEach(function(m){ 
           displayPhoto(m);
