@@ -187,8 +187,14 @@ Analyzed photos are deleted from the filesystem to clear up Pi.
 ### 5. View the Live Photo Update on Web
 
 - Get the web interface source code from `gh-pages` branch.
+- In `js/app.js`, where you see the keys (below), replace with your own PubNub keys to match the keys you used in the node app on Raspberry Pi.
+```javascript
+subscribe_key: 'sub-c-f762fb78-2724-11e4-...',
+publish_key:   'pub-c-156a6d5f-22bd-4a13-...'
+```
 - Run the `index.html` on browser
 
+![JamieCam](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/gh-pages/images/screenshot.png "Jamie has no privacy")
 
 ## Known Issue
 
