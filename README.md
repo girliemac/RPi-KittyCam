@@ -19,6 +19,7 @@ Raspberry Pi app using a camera and PIR motion sensor, written in Node.js using 
 - 5MP Camera Board Module ([buy](http://www.amazon.com/gp/product/B00E1GGE40/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00E1GGE40&linkCode=as2&tag=girliemac-20&linkId=2OCOQHE3JOB5U7OF))
 - Pyroelectric Infrared (PIR) motion sensor ([buy](http://www.amazon.com/gp/product/B00IYE7X9A/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IYE7X9A&linkCode=as2&tag=girliemac-20&linkId=BSNV7DTMA2BMRDDQ))
 - 3 F-to-F wires ([buy](http://www.amazon.com/gp/product/B007MRQC1K/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B007MRQC1K&linkCode=as2&tag=girliemac-20&linkId=HRFGKRZW6NAVPVOS))
+- *Optional*: SmartiPi LEGO compatible Raspberry Pi with camera case ([Buy](http://amzn.to/1iF7QNd))
 
 If you are a Raspberry Pi newbie, I recommend to buy your first Pi from [CanaKit](http://www.amazon.com/gp/product/B008XVAVAW/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008XVAVAW&linkCode=as2&tag=girliemac-20&linkId=DU2AO5J5GTPAQMPO).
 
