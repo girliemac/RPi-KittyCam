@@ -1,5 +1,7 @@
 # Raspberry Pi KittyCam
 
+[Watch the demo on YouTube :-)](https://www.youtube.com/watch?v=wqewhjhjaHY)
+
 ![RPi KittyCam](https://lh3.googleusercontent.com/o-XG7ZijXM_UXQHuYrDxC6mlTofyUzUCmHqNmr6oRYZk=w1346-h757-no "Rapsberry Pi KittyCam")
 
 ![RPi KittyCam](https://lh3.googleusercontent.com/UuKlrNQWs5wFciRqI8qiZKTVoh4XrTBa40LD5mUa5MIn=w1346-h757-no "Rapsberry Pi KittyCam")
@@ -17,6 +19,7 @@ Raspberry Pi app using a camera and PIR motion sensor, written in Node.js using 
 - 5MP Camera Board Module ([buy](http://www.amazon.com/gp/product/B00E1GGE40/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00E1GGE40&linkCode=as2&tag=girliemac-20&linkId=2OCOQHE3JOB5U7OF))
 - Pyroelectric Infrared (PIR) motion sensor ([buy](http://www.amazon.com/gp/product/B00IYE7X9A/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IYE7X9A&linkCode=as2&tag=girliemac-20&linkId=BSNV7DTMA2BMRDDQ))
 - 3 F-to-F wires ([buy](http://www.amazon.com/gp/product/B007MRQC1K/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B007MRQC1K&linkCode=as2&tag=girliemac-20&linkId=HRFGKRZW6NAVPVOS))
+- *Optional*: SmartiPi LEGO compatible Raspberry Pi with camera case ([Buy](http://amzn.to/1iF7QNd))
 
 If you are a Raspberry Pi newbie, I recommend to buy your first Pi from [CanaKit](http://www.amazon.com/gp/product/B008XVAVAW/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008XVAVAW&linkCode=as2&tag=girliemac-20&linkId=DU2AO5J5GTPAQMPO).
 
@@ -187,8 +190,14 @@ Analyzed photos are deleted from the filesystem to clear up Pi.
 ### 5. View the Live Photo Update on Web
 
 - Get the web interface source code from `gh-pages` branch.
+- In `js/app.js`, where you see the keys (below), replace with your own PubNub keys to match the keys you used in the node app on Raspberry Pi.
+```javascript
+subscribe_key: 'sub-c-f762fb78-2724-11e4-...',
+publish_key:   'pub-c-156a6d5f-22bd-4a13-...'
+```
 - Run the `index.html` on browser
 
+![JamieCam](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/gh-pages/images/screenshot.png "Jamie has no privacy")
 
 ## Known Issue
 
