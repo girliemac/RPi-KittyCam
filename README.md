@@ -1,5 +1,9 @@
 # Raspberry Pi KittyCam
 
+**Updated: Tutorial is now available on my [blog](http://www.girliemac.com/blog/2015/12/25/kittycam-raspberrypi-camera-cat-face-recog-nodejs/)!**
+
+---
+
 [![Jamie on YouTube](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/youtube.jpg "Jamie on YouTube")](https://www.youtube.com/watch?v=wqewhjhjaHY)
 
 [Watch the demo on YouTube :-)](https://www.youtube.com/watch?v=wqewhjhjaHY)
