@@ -22,11 +22,11 @@ Raspberry Pi app using a camera and PIR motion sensor, written in Node.js using 
 ### What you need
 
 - Raspberry Pi 2 (with Raspbian. Also with WiFi adapter)
-- 5MP Camera Board Module ([buy](http://www.amazon.com/gp/product/B00E1GGE40/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00E1GGE40&linkCode=as2&tag=girliemac-20&linkId=2OCOQHE3JOB5U7OF))
-- Pyroelectric Infrared (PIR) motion sensor ([buy](http://www.amazon.com/gp/product/B00IYE7X9A/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IYE7X9A&linkCode=as2&tag=girliemac-20&linkId=BSNV7DTMA2BMRDDQ))
-- 3 F-to-F wires ([buy](http://www.amazon.com/gp/product/B007MRQC1K/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B007MRQC1K&linkCode=as2&tag=girliemac-20&linkId=HRFGKRZW6NAVPVOS))
+- 5MP Camera Board Module ([buy](http://amzn.to/1pg7Y91))
+- Pyroelectric Infrared (PIR) motion sensor ([buy](http://amzn.to/1pg828D))
+- 3 F/F wires ([buy](http://amzn.to/1Mf50Xy))
 
-If you are a Raspberry Pi newbie, I recommend to buy your first Pi from [CanaKit](http://www.amazon.com/gp/product/B008XVAVAW/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B008XVAVAW&linkCode=as2&tag=girliemac-20&linkId=DU2AO5J5GTPAQMPO).
+If you are a Raspberry Pi newbie, I recommend to buy this [CanaKit Raspberry Pi 2 Complete Starter Kit](http://amzn.to/1QNFlcB).
 
 ### Wiring
 
@@ -60,13 +60,14 @@ $ sudo apt-get upgrade
 #### Download node
 
 ```
-$ wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+$ wget http://node-arm.herokuapp.com/node_archive_armhf.deb
 ```
+*Note: I have not tested with the latest Node (v5), but if you would want to install the latest, wget http://node-arm.herokuapp.com/node_latest_armhf.deb, instead*
 
 once downloaded, install
 
 ```
-$ sudo dpkg -i node_latest_armhf.deb
+$ sudo dpkg -i node_archive_armhf.deb 
 ```
 
 Check if node is successfully installed
@@ -205,9 +206,9 @@ Analyzed photos are deleted from the filesystem to clear up Pi.
 - Raspistill continuously takes a bunch of photos when I set `t = 0` (and crashes Pi while so many child process is running) so I have set `t = 1`, which causes delay. It seems to take only integer. Cats are too fast to wait for a second. 
 - The camera can't capture recognizable pics after the sun is set. My room light is too dark.
 
-### KittyDar (Cat Facial Recognition)
+### KittyDar (Cat Facial Detection)
 
-- During mealtime. When a cat is eating food (head-down position), the facial detection doesn't recognize the cat at all.
+- During mealtime. When a cat is eating food (head-down position), the facial detection doesn't detect the cat at all.
 - When my cat moves, eats from the side of the dish, or put his butt on the camera, it fails to tell me my cat was eating.
 
 #### The cat photos failed to be recognized
