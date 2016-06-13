@@ -133,6 +133,14 @@ Get the zip from [my forked repo](https://github.com/girliemac/kittydar).
 $ npm install johnny-five
 ```
 
+#### Install Raspi-io
+
+You need this I/O plugin to use Johnny-Five on Raspbian. 
+
+```
+$ npm install raspi-io
+```
+
 #### Install PubNub
 
 For realtime live-updating the web interface, use PubNub.
