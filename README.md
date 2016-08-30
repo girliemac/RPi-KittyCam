@@ -1,6 +1,8 @@
 # Raspberry Pi KittyCam
 
-**Updated: Tutorial is now available on my [blog](http://www.girliemac.com/blog/2015/12/25/kittycam-raspberrypi-camera-cat-face-recog-nodejs/)!**
+**Updated: Tutorial is now available on my blog, [KittyCam - Building a Raspberry Pi Camera with Cat Face Detection in Node.js](http://www.girliemac.com/blog/2015/12/25/kittycam-raspberrypi-camera-cat-face-recog-nodejs/), also 
+[Upgrading KittyCam with Raspberry Pi 3](http://www.girliemac.com/blog/2016/06/13/kittycam-update-with-raspberrypi3/)
+**
 
 ---
 
@@ -57,20 +59,18 @@ then
 $ sudo apt-get upgrade
 ```
 
-#### Download node
+#### [Updated] Download Node
 
-```
-$ wget http://node-arm.herokuapp.com/node_archive_armhf.deb
-```
-*Note: I have not tested with the latest Node (v5), but if you would want to install the latest, wget http://node-arm.herokuapp.com/node_latest_armhf.deb, instead*
+Node for ARM is now supported officially on Nodejs.org! Download and install from there:
 
-once downloaded, install
-
-```
-$ sudo dpkg -i node_archive_armhf.deb 
+```bash
+$ wget https://nodejs.org/dist/v4.4.5/node-v4.4.5-linux-armv7l.tar.xz
+$ tar -xvf node-v4.4.5-linux-armv7l.tar.xz 
+$ cd node-v4.4.5-linux-armv7l
+$ sudo cp -R * /usr/local/
 ```
 
-Check if node is successfully installed
+Check if node is successfully installed:
 
 ```
 $ node -v
