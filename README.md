@@ -148,10 +148,10 @@ $ npm install raspi-io
 
 #### Install PubNub
 
-For realtime live-updating the web interface, use PubNub.
+For realtime live-updating the web interface, use PubNub (v3.x, imcompatible with the new v4).
 
 ```
-$ npm install pubnub
+$ npm install pubnub@3.15.2
 ```
 
 You need to [sign up and get you own publish and subscribe keys!](http://pubnub.com)
