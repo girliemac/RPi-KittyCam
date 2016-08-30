@@ -1,6 +1,0 @@
-#ifndef I2C_BUS_READI2CBLOCK_H_
-#define I2C_BUS_READI2CBLOCK_H_
-NAN_METHOD(ReadI2cBlockAsync);
-NAN_METHOD(ReadI2cBlockSync);
-#endif // I2C_BUS_READI2CBLOCK_H_
-
