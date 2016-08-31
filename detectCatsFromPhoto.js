@@ -1,36 +1,37 @@
-var fs = require('fs');
-
 // KittyDar - cat facial detection
 // Note: this file and kittydar need to use the same canvas module, otherwise it failes.
 // https://github.com/Automattic/node-canvas/issues/487
 
-var kittydar = require('kittydar');
-var Canvas = require('kittydar/node_modules/canvas');
+'use strict'
 
-process.on('message', function(m) {
+const fs = require('fs');
+const kittydar = require('kittydar');
+const Canvas = require('kittydar/node_modules/canvas');
 
-  var imgPath = m[0];
+process.on('message', (m) => {
 
-  fs.readFile(imgPath, function(err, data) {
+  let imgPath = m[0];
+
+  fs.readFile(imgPath, (err, data) => {
     if (err) {
       return console.error(err);
     }
-    var img = new Canvas.Image; // creating an image object
+    let img = new Canvas.Image; // creating an image object
     img.src = data;
 
-    var w = img.width;
-    var h = img.height;
+    let w = img.width;
+    let h = img.height;
 
-    var canvas = new Canvas(w, h);
-    var ctx = canvas.getContext('2d');
+    let canvas = new Canvas(w, h);
+    let ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, w, h, 0, 0, w, h);
 
     console.log('PID ' + process.pid + ': ditecting cats in the photo...');
 
-    var cats = kittydar.detectCats(canvas);
+    let cats = kittydar.detectCats(canvas);
     console.log('There are', cats.length, 'cats in this photo');
 
-    var base64Img = '';
+    let base64Img = '';
 
     if(cats.length > 0) {
 
@@ -38,8 +39,8 @@ process.on('message', function(m) {
       ctx.strokeStyle = 'rgba(255, 64, 129, 0.8)';
       ctx.lineWidth = 2;
 
-      for (var i = 0; i < cats.length; i++) {
-        var cat = cats[i];
+      for (let i = 0; i < cats.length; i++) {
+        let cat = cats[i];
         console.log(cat);
         ctx.strokeRect(cat.x, cat.y, cat.width, cat.height);
       }
@@ -56,6 +57,6 @@ process.on('message', function(m) {
   });
 });
 
-process.on('error', function (err) {
+process.on('error', (err) => {
     console.log('Child process error: ', err);
 });

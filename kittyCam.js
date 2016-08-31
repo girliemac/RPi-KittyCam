@@ -109,7 +109,7 @@ function publish(url, timestamp) {
 
 const Nexmo = require('nexmo');
 
-var nexmo = new Nexmo({
+const nexmo = new Nexmo({
   apiKey: config.nexmo.api_key,
   apiSecret: config.nexmo.api_secret
 });
