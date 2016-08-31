@@ -170,6 +170,16 @@ $ npm install cloudinary
 
 You need to [sign up and get you own API keys!](http://cloudinary.com)
 
+### Install Nexmo [New feature! Aug 30, 2016]
+
+To send a SMS message with the Cloiudinary image link to your phone, use Nexmo SMS API.
+
+```
+$ npm install nexmo
+```
+
+You need to [sign up and get your own keys!](https://dashboard.nexmo.com/sign-up)
+
 ### 3. Set up your config.js with Credentials
 
 I removed my `config.js` file from the public repo so nobody abuses my API keys. So you need to create your own `config.js` in the root dir of the app. 
@@ -184,14 +194,21 @@ module.exports = {
     api_key: 'your_API_key',
     api_secret: 'your_API_secret',
   },
-
   pubnub: {
     subscribe_key: 'your_sub_key',
     publish_key: 'your_pub_key'
+  },
+  nexmo: {
+    api_key: 'your_API_key',
+    api_secret: 'your_API_secret',
+    fromNumber: 'your_Nexmo_phone_number',
+    toNumber: 'your_mobile_phone_number' 
   }
 
 };
 ```
+
+Nexmo's phone number should begin with a country code. e.g. '14155551234'.
 
 ### 4. Run the Code
 

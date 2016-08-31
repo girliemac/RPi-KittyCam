@@ -106,6 +106,7 @@ function publish(url, timestamp) {
 }
 
 // Nexmo to send SMS
+
 const Nexmo = require('nexmo');
 
 var nexmo = new Nexmo({
@@ -113,7 +114,6 @@ var nexmo = new Nexmo({
   apiSecret: config.nexmo.api_secret
 });
 
-// Sending SMS via Nexmo
 function sendSMS(url, timestamp) {
   var t = new Date(timestamp).toLocaleString();
   let msg = '🐈 detected on '+ t + '! See the photo at: ' + url;
@@ -145,8 +145,8 @@ cloudinary.config({
 function uploadToCloudinary(base64Img, timestamp) {
   cloudinary.uploader.upload(base64Img, (result) => {
     console.log(result);
-    publish(result.url, timestamp);
-    sendSMS(result.url, timestamp);
+    publish(result.url, timestamp); // Comment this out if you don't use PubNub
+    sendSMS(result.url, timestamp); // Comment this out if you don't use Nexmo
   });
 }
 
