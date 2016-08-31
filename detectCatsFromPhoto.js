@@ -45,10 +45,10 @@ process.on('message', function(m) {
       }
 
       base64Img = canvas.toDataURL(); // png by default. jpeg is currently not supported by node-canvas
-    } 
+    }
 
     process.send(base64Img);
-    
+
     ctx.clearRect(0, 0, w, h);
 
     process.exit(0);

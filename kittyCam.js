@@ -1,81 +1,83 @@
-/* 
+/*
  * KittyCam
  * A Raspberry Pi app using a camera PIR motion sensor, with cat facial detection
  *
  * Tomomi Imura (@girlie_mac)
  */
 
-var config = require('./config');
-var fs = require('fs');
-var child_process = require('child_process');
+'use strict'
+
+const config = require('./config');
+const fs = require('fs');
+const child_process = require('child_process');
 
 require('events').EventEmitter.prototype._maxListeners = 20;
 
 // Johnny-Five for RPi
-var raspi = require('raspi-io');
-var five = require('johnny-five');
-var board = new five.Board({io: new raspi()});
+const raspi = require('raspi-io');
+const five = require('johnny-five');
+const board = new five.Board({io: new raspi()});
 
-var i = 0;
+let i = 0;
 
-board.on('ready', function() {
+board.on('ready', () => {
   console.log('board is ready');
 
   // Create a new `motion` hardware instance.
-  var motion = new five.Motion('P1-7'); //a PIR is wired on pin 7 (GPIO 4)
+  const motion = new five.Motion('P1-7'); //a PIR is wired on pin 7 (GPIO 4)
 
   // 'calibrated' occurs once at the beginning of a session
-  motion.on('calibrated', function() {
+  motion.on('calibrated', () => {
     console.log('calibrated');
   });
 
   // Motion detected
-  motion.on('motionstart', function() {
+  motion.on('motionstart', () => {
     console.log('motionstart');
 
-    // Run raspistill command to take a photo with the camera module  
-    var filename = 'photo/image_'+i+'.jpg';
-    var args = ['-w', '320', '-h', '240', '-o', filename, '-t', '1'];
-    var spawn = child_process.spawn('raspistill', args);
+    // Run raspistill command to take a photo with the camera module
+    let filename = 'photo/image_'+i+'.jpg';
+    let args = ['-w', '320', '-h', '240', '-o', filename, '-t', '1'];
+    let spawn = child_process.spawn('raspistill', args);
 
-    spawn.on('exit', function(code) {
+    spawn.on('exit', (code) => {
       console.log('A photo is saved as '+filename+ ' with exit code, ' + code);
-      var timestamp = Date.now();
+      let timestamp = Date.now();
       i++;
 
       // Detect cats from photos
 
       if((/jpg$/).test(filename)) { // Ignore the temp filenames like image_001.jpg~
-        var imgPath = __dirname + '/' + filename;
+        let imgPath = __dirname + '/' + filename;
 
         // Child process: read the file and detect cats with KittyDar
-        var args = [imgPath];
-        var fork = child_process.fork(__dirname + '/detectCatsFromPhoto.js');
+        let args = [imgPath];
+        let fork = child_process.fork(__dirname + '/detectCatsFromPhoto.js');
         fork.send(args);
 
         // the child process is completed
-        fork.on('message', function(base64) {
+        fork.on('message', (base64) => {
           if(base64) {
             uploadToCloudinary(base64, timestamp);
           }
-          
+
           // Once done, delete the photo to clear up the space
           deletePhoto(imgPath);
         });
       }
-      
+
     })
   });
 
   // 'motionend' events
-  motion.on('motionend', function() {
+  motion.on('motionend', () => {
     console.log('motionend');
   });
 });
 
 
 function deletePhoto(imgPath) {
-  fs.unlink(imgPath, function(err) {
+  fs.unlink(imgPath, (err) => {
     if (err) {
        return console.error(err);
     }
@@ -87,42 +89,68 @@ function deletePhoto(imgPath) {
 // PubNub to publish the data
 // to make a separated web/mobile interface can subscribe the data to stream the photos in realtime.
 
-var pubnub = require('pubnub');
-var channel = 'kittyCam';
+const channel = 'kittyCam';
 
-pubnub = pubnub.init({
+const pubnub = require('pubnub').init({
   subscribe_key: config.pubnub.subscribe_key,
   publish_key: config.pubnub.publish_key
 });
 
 function publish(url, timestamp) {
   pubnub.publish({
-    channel: channel, 
+    channel: channel,
     message: {image: url, timestamp: timestamp},
-    callback: function(m) {console.log(m);},
-    error: function(err) {console.log(err);}
+    callback: (m) => {console.log(m);},
+    error: (err) => {console.log(err);}
   });
 }
 
+// Nexmo to send SMS
+const Nexmo = require('nexmo');
+
+var nexmo = new Nexmo({
+  apiKey: config.nexmo.api_key,
+  apiSecret: config.nexmo.api_secret
+});
+
+// Sending SMS via Nexmo
+function sendSMS(url, timestamp) {
+  var t = new Date(timestamp).toLocaleString();
+  let msg = '🐈 detected on '+ t + '! See the photo at: ' + url;
+  nexmo.message.sendSms(
+    config.nexmo.fromNumber,
+    config.nexmo.toNumber,
+    msg,
+    {type: 'unicode'},
+    (err, responseData) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.dir(responseData);
+      }
+    }
+  );
+}
 
 // Cloudinary to store the photos
 
-var cloudinary = require('cloudinary');
+const cloudinary = require('cloudinary');
 
-cloudinary.config({ 
-  cloud_name: config.cloudinary.cloud_name, 
-  api_key: config.cloudinary.api_key, 
-  api_secret: config.cloudinary.api_secret 
+cloudinary.config({
+  cloud_name: config.cloudinary.cloud_name,
+  api_key: config.cloudinary.api_key,
+  api_secret: config.cloudinary.api_secret
 });
 
 function uploadToCloudinary(base64Img, timestamp) {
-  cloudinary.uploader.upload(base64Img, function(result) { 
+  cloudinary.uploader.upload(base64Img, (result) => {
     console.log(result);
-    publish(result.url, timestamp); 
+    publish(result.url, timestamp);
+    sendSMS(result.url, timestamp);
   });
 }
 
 // Ctrl-C
-process.on('SIGINT', function(){
+process.on('SIGINT', () => {
   process.exit();
 });

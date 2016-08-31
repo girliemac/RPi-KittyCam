@@ -6,7 +6,7 @@
 
 ---
 
-[![Jamie on YouTube](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/youtube.jpg "Jamie on YouTube")](https://www.youtube.com/watch?v=wqewhjhjaHY)
+[![Jamie on YouTube](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/extra/youtube.jpg "Jamie on YouTube")](https://www.youtube.com/watch?v=wqewhjhjaHY)
 
 [Watch the demo on YouTube :-)](https://www.youtube.com/watch?v=wqewhjhjaHY)
 
@@ -93,7 +93,7 @@ $ raspistill -o photo.jpg
 
 ## Running this Code
 
-I would like to say, `$ npm install` to install all the dependencies, and voilà! but it is not!
+I would like to say, `$ npm install` to install all the dependencies, and voilà! but it is **not**!
 
 ### 1. Prerequisite: Install Cairo to the System
 
@@ -115,7 +115,7 @@ Otherwise, go to the next step to fresh-install the next several modules.
 
 #### Install KittyDar
 
-![Jamie detected](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/jamie-detected.png "Jamie detected by KittyDar")
+![Jamie detected](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/extra/jamie-detected.png "Jamie detected by KittyDar")
 
 *This is an actual photo taken by my Raspberry Pi, while Jamie was eating, and detected by KittyDar cat facial detection!*
 
@@ -126,13 +126,17 @@ Ideally install from `npm install kittydar —save`
 
 However, node-canvas 1.0.1 (the version specified in package.json for KittyDar) failed to build with the current Node.js (v0.12.6).
 
-So what I did was download the zip from github repo into *node_modules*, alter the `package.json`, where canvas: ~1.0.1 to ^1.0.1 so that the latest canvas is installed as I `npm install` from the kittydar directory.
+So what I did was download the zip from github repo into *node_modules*, alter the `package.json`, where canvas: `~1.0.1` to `^1.0.1` so that the latest v1.x canvas will be installed as I `npm install` from the kittydar directory.
 
 Get the zip from [my forked repo](https://github.com/girliemac/kittydar).
 
 *Note: I am sending a pull request (https://github.com/harthur/kittydar/pull/27)*
 
+The following packages are specified in`package.json` file so they will be installed from `npm install` automatically, however, I just list them in case you want to know what they are:
+
 #### Install Johnny-Five
+
+[Johnny-Five](https://jonny-five.io) is a Javascript robotics framework that let you program micro controllers easily with carious hardware APIs.
 
 ```
 $ npm install johnny-five
@@ -140,7 +144,7 @@ $ npm install johnny-five
 
 #### Install Raspi-io
 
-You need this I/O plugin to use Johnny-Five on Raspbian. 
+This I/O plugin allows you to use Johnny-Five on Raspbian. 
 
 ```
 $ npm install raspi-io
@@ -148,7 +152,7 @@ $ npm install raspi-io
 
 #### Install PubNub
 
-For realtime live-updating the web interface, use PubNub (v3.x, imcompatible with the new v4).
+This is used to establish real-time live-updating the web interface, use PubNub (v3.x, imcompatible with the new v4).
 
 ```
 $ npm install pubnub@3.15.2
@@ -158,7 +162,7 @@ You need to [sign up and get you own publish and subscribe keys!](http://pubnub.
 
 #### Install Cloudinary
 
-For storing photos, use Cloudinary.
+To store photos in a cloud, I am using Cloudinary.
 
 ```
 $ npm install cloudinary
@@ -168,7 +172,8 @@ You need to [sign up and get you own API keys!](http://cloudinary.com)
 
 ### 3. Set up your config.js with Credentials
 
-Create a `config.js` in the root dir of the app.
+I removed my `config.js` file from the public repo so nobody abuses my API keys. So you need to create your own `config.js` in the root dir of the app. 
+
 The file should include your API keys:
 
 ```
@@ -190,7 +195,7 @@ module.exports = {
 
 ### 4. Run the Code
 
-You must run with sudo:
+You must run with sudo, because some modules used in the app requires root access:
 
 ```
 $ sudo node kittyCam.js
@@ -221,8 +226,9 @@ Analyzed photos are deleted from the filesystem to clear up Pi.
 
 #### The cat photos failed to be recognized
 
-![Jamie undetected](photo/image_14.jpg "Jamie undetected")
-![Jamie undetected](photo/image_24.jpg "Jamie undetected")
-![Jamie undetected](photo/image_150.jpg "Jamie undetected")
-![Jamie undetected](photo/image_166.jpg "Jamie undetected")
-![Upside-down Jamie undetected](photo/image_311.jpg "Jamie undetected")
+![Jamie undetected](photo/extra/image_14.jpg "Jamie undetected")
+![Jamie undetected](photo/extra/image_24.jpg "Jamie undetected")
+![Jamie undetected](photo/extra/image_150.jpg "Jamie undetected")
+![Jamie undetected](photo/extra/image_166.jpg "Jamie undetected")
+![Upside-down Jamie undetected](photo/extra/image_311.jpg "Jamie undetected")
+
