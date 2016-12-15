@@ -180,6 +180,8 @@ $ npm install nexmo
 
 You need to [sign up and get your own keys!](https://dashboard.nexmo.com/sign-up)
 
+![SMS via Nexmo](https://raw.githubusercontent.com/girliemac/RPi-KittyCam/master/photo/extra/nexmo-sms-cat-detected.png "A kitty cat detected! Send SMS via Nexmo")
+
 ### 3. Set up your config.js with Credentials
 
 I removed my `config.js` file from the public repo so nobody abuses my API keys. So you need to create your own `config.js` in the root dir of the app. 
