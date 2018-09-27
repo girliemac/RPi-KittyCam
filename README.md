@@ -136,7 +136,7 @@ The following packages are specified in`package.json` file so they will be insta
 
 #### Install Johnny-Five
 
-[Johnny-Five](https://jonny-five.io) is a Javascript robotics framework that let you program micro controllers easily with carious hardware APIs.
+[Johnny-Five](http://johnny-five.io/) is a Javascript robotics framework that let you program micro controllers easily with carious hardware APIs.
 
 ```
 $ npm install johnny-five
