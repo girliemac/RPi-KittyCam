@@ -253,3 +253,7 @@ Analyzed photos are deleted from the filesystem to clear up Pi.
 
 ## Thank you!
 ![QA team](photo/extra/qa-team.png "QA Team")
+
+### Presentation at JS Kongress in München
+
+[*KittyCam.js - Raspberry Pi Camera w/ Cat Facial Detection* on Slideshare](https://www.slideshare.net/tomomi/js-kongress-2016-kittycamjs-raspberry-pi-camera-w-cat-facial-detection)
