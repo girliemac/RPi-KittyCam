@@ -251,3 +251,5 @@ Analyzed photos are deleted from the filesystem to clear up Pi.
 ![Jamie undetected](photo/extra/image_166.jpg "Jamie undetected")
 ![Upside-down Jamie undetected](photo/extra/image_311.jpg "Jamie undetected")
 
+## Thank you!
+![QA team](photo/extra/qa-team.png "QA Team")
